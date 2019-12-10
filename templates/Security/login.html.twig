@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="body_form">
+        <form action="{{ path('login') }}" method="post">
+            <fieldset>
+                <legend> Sign In </legend>
+                <div>
+                    <label>Username</label>
+                    <input type="text" placeholder="username" required name="_username">
+                </div>
+
+                <div>
+                    <label>Password</label>
+                    <input type="password" placeholder="password" required name="_password">
+                </div>
+                <br>
+                <button class="btn" type="submit" >Login</button>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend> Sign Up </legend>
+                <a href="{{ path('createUser') }}">Sign up</a>
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock %}
+

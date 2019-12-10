@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% if form is defined %}
+        {{ form_start(form) }}
+
+        <br />
+        <br />
+
+        <div>
+
+            <h2>Create Advert</h2>
+            <form>
+                {{ form_row(form.name, {
+                    'label': 'Name: '}) }}
+
+                {{ form_row(form.description, {
+                    'label': 'Descripion: ' }) }}
+
+                {{ form_row(form.price, {
+                    'label': 'Price: '}) }}
+
+                {{ form_row(form.city, {
+                    'label': 'City: '}) }}
+
+                {{ form_row(form.adress, {
+                    'label': 'Adress: '}) }}
+
+                {{ form_row(form.postalcode, {
+                    'label': 'Postal Code: '}) }}
+
+                {{ form_row(form.category, {
+                    'label': 'Category: ' }) }}
+                <br />
+
+                {{ form_row(form.images, {
+                    'label': 'Images: '}) }}
+                <br />
+                {{ form_row(form._token) }}
+
+                <button type="submit">Create</button>
+            </form>
+        </div>
+
+        {{ form_end(form) }}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if form is defined %}
+
+        {{ form_start(form) }}
+
+        <div class="body_form">
+            <form>
+                <fieldset>
+                    <legend>Create your account</legend>
+                    {{ form_row(form.firstname, {
+                        'label': 'First Name '
+                    }) }}
+
+                    {{ form_row(form.lastname, {
+                        'label': 'Last Name '
+                    }) }}
+
+                    {{ form_row(form.email, {
+                        'label': 'Email'
+                    }) }}
+
+                    {{ form_row(form.information, {
+                        'label': 'About Me'
+                    }) }}
+
+                    {{ form_row(form.password, {
+                        'label': 'Password'
+                    }) }}
+
+                    {{ form_row(form.pseudo, {
+                        'label': 'Username '
+                    }) }}
+                    {{ form_row(form._token) }}
+                    <br>
+
+                    <button class="btn" type="submit" >Submit</button>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Already signed up?</legend>
+                    <br>
+                    <a href="{{ path('login') }}">Login here</a>
+                </fieldset>
+            </form>
+        </div>
+
+        {{ form_end(form) }}
+    {% endif %}
+
+{% endblock %}

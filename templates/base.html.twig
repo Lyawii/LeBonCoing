@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}😊{% endblock %}</title>
+    {% block stylesheets %}
+        {# bootstrap #}
+
+        {# custom #}
+        <link rel="stylesheet" href="{{ asset('/css/HomeStyle.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+
+<body>
+
+{% block nav %}
+
+    <ul class="Menu_body">
+
+        <li class="Menu left"><a href="{{ path('home') }}"> <img src="{{ asset('/image/coing.png') }}" alt="coing"> </a> </li>
+        {% if not app.user %}
+            <li class="Menu right"> <a href="{{ path('login') }}">Login</a></li>
+        {% else %}
+            <li class="Menu right"> <a href="{{ path('logout') }}">Logout</a></li>
+        {% endif %}
+
+        {% if app.user %}
+            <li class="Menu right"> <a href="{{ path('UserAccount') }}">My account</a> </li>
+            <li class="Menu right"> <a href="{{ path('createAdvert') }}">Create a new advert</a> </li>
+            <li class="Menu right"> <a href="{{ path('AllAdvertOfUserPseudo',{ nameUser: app.user.getPseudo }) }}">See my adverts</a> </li>
+        {% endif %}
+
+
+
+    </ul>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

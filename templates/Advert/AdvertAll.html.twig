@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% if AllAdvert is defined %}
+        {% for it in AllAdvert %}
+            <div>
+                <div>
+                    <a href="{{ path('AdvertByName', {nameUser: it.getUser().getPseudo(), name: it.getName()}) }}">{{ it.getName() }}</a>
+                    <div>
+                        <a href="">By  {{ it.getUser().getPseudo() }}<br></a><br>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            Description : {{ it.getDescription() }} <br>
+                            Category : {{ it.getCategory().getName() }} <br>
+                            Price : {{ it.getPrice() }} <br>
+                            City : {{ it.getCity() }} <br>
+                            Adress : {{ it.getAdress() }} <br>
+                            Postal Code : {{ it.getPostalcode() }} <br>
+                            creation date : {{ it.getCreatedAt().format('Y-m-d H:i:s') }} <br>
+
+                            {% for image in it.getImages() %}
+                                <img height="160px" width="160xp" src="{{ asset(image.getImagePath()) }}" alt="">
+                            {% endfor %}
+
+                            {% if app.user is defined %}
+                                {% if app.user.id == it.user.id %}
+                                    <a href="{{ path('updateAdvert', {name: it.getName()}) }}">Modify</a><br>
+                                {% endif %}
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+
+    <br />
+    <br />
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

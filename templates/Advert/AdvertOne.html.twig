@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% if AllAdvert is defined %}
+        {% for it in AllAdvert %}
+            <div class="Advert">
+                <div id="image" class="img">
+
+                </div>
+                <br />
+                <div>
+                    <div class="title">
+                        <h1 id="name">{{ it.getName() }}</h1>
+                    </div>
+                    <br />
+                    <div class="description">
+                        <h3>Description</h3>
+                        <p id="description">{{ it.getDescription() }}</p><br>
+                    </div>
+                    <div class="category">
+                        <h3 >Category</h3>
+                        <div id="category">{{ it.getCategory().getName() }}</div>
+                    </div>
+                    <br />
+                    <div class="price">
+                        <h3>Price</h3>
+                        <div id="price"> {{ it.getPrice() }} </div>
+                    </div>
+
+
+                    {% if app.user is defined %}
+                        {% if app.user.id == it.user.id %}
+                            <a href="">Modify</a><br>
+                        {% endif %}
+                    {% endif %}
+
+        {% endfor %}
+    {% endif %}
+
+
+{% endblock %}

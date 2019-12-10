@@ -1,0 +1,285 @@
+body
+{
+    background-color: #FFFACD;
+    margin: 0;
+    padding: 0;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+/* ----- Menu ----- */
+.Menu_body
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid black;
+    background-color: #2e8b57;
+    font-weight: normal;
+}
+
+.right
+{
+    float: right;
+    padding: 13px 5px 2px 5px;
+}
+
+.left
+{
+    float: left;
+    padding: 0 5px 0 0;
+}
+
+.Menu a
+{
+    display: block;
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 15px 5px 15px;
+}
+
+.Menu a:hover
+{
+    background-color: #276c3f;
+}
+
+/* ----- Erreur ----- */
+
+li
+{
+    background: none;
+    text-align: center;
+    color: red;
+    list-style-type: none;
+}
+
+/* ----- Container -----*/
+.container
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* ----- Annonces Position ----- */
+
+.body
+{
+    border: 3px solid black;
+    padding: 3%;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+.body_container
+{
+    text-align: right;
+}
+
+.title
+{
+    text-decoration: underline;
+}
+
+.Advert
+{
+    display: inline-block;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 2px solid black;
+    margin: 1%;
+    padding: 2%;
+}
+
+/* ----- Pagination ----- */
+
+.pagination {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    text-align: center;
+    color: black;
+    margin: 1% 0 1% 0;
+}
+
+.pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+}
+
+.pagination li a
+{
+    color: black;
+}
+
+.pagination li.active {
+    background-color: #28784b;
+    color: white;
+    border: 1px solid #ddd;
+}
+
+.pagination a:visited
+{
+    color: black;
+}
+
+.pagination li:hover:not(.active) {background-color: #ddd;}
+
+/* ----- Formulaire ------ */
+
+.body_form
+{
+    font-family:"trebuchet ms",sans-serif;
+    font-size: 120%;
+    text-align: center;
+}
+
+form
+{
+    padding:10px;
+    width:350px;
+    height: auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-175px; /* -largeur/2 */
+    margin-top:-350px; /* -hauteur/2 */
+}
+
+fieldset
+{
+
+    padding:0 20px 20px 20px;
+    margin-bottom:10px;
+    border:1px solid #DF3F3F;
+    border-radius: 12px;
+}
+
+legend
+{
+    color:#DF3F3F;
+    font-weight:bold
+}
+
+label
+{
+    margin-top:10px;
+    display:block;
+}
+
+label.inline
+{
+    display:inline;
+    margin-right:50px;
+}
+
+input, textarea, select, option
+{
+    background-color:#FFF3F3;
+}
+
+input, textarea, select
+{
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.btn, textarea, select, option
+{
+    background-color:#FFF3F3;
+}
+
+.btn, textarea, select
+{
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+select
+{
+    margin-top:10px;
+}
+
+input[type=radio]
+{
+    background-color:transparent;
+    border:none;
+    width:10px;
+}
+
+input[type=submit], input[type=reset]
+{
+    width:100px;
+    margin-left:5px;
+    box-shadow:1px 1px 1px #D83F3D;
+    cursor:pointer;
+}
+
+.btn[type=radio]
+{
+    background-color:transparent;
+    border:none;
+    width:10px;
+}
+
+.btn[type=submit], .btn[type=reset]
+{
+    width:100px;
+    margin-left:5px;
+    box-shadow:1px 1px 1px #D83F3D;
+    cursor:pointer;
+}
+
+input:focus, textarea:focus {
+    background-color:white;
+}
+input[type=submit]:focus, input[type=reset]:focus {
+    background-color:#FFF3F3;
+}
+
+.btn:focus, textarea:focus {
+    background-color:white;
+}
+.btn[type=submit]:focus, .btn[type=reset]:focus {
+    background-color:#FFF3F3;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color:#FCDEDE;
+}
+input[type=submit]:active, input[type=reset]:active {
+    background-color:#FCDEDE;
+    box-shadow:1px 1px 1px #D83F3D inset;
+}
+
+.btn[type=submit]:hover, .btn[type=reset]:hover {
+    background-color:#FCDEDE;
+}
+.btn[type=submit]:active, .btn[type=reset]:active {
+    background-color:#FCDEDE;
+    box-shadow:1px 1px 1px #D83F3D inset;
+}

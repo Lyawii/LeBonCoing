@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% if user is defined %}
+        <div class="body_form">
+            <form>
+
+                <fieldset>
+                    <legend>{{ user.getFirstName() }} {{ user.getLastName() }}</legend>
+                    <br>
+                    {{ user.getInformation }}
+                </fieldset>
+
+                <br />
+
+                <fieldset>
+                    <legend>Pseudo</legend>
+                    <br>
+                    {{ user.getPseudo() }}<br>
+                </fieldset>
+
+                <br />
+
+                <fieldset>
+                    <legend>Email</legend>
+                    <br>
+                    {{ user.getEmail() }}
+                </fieldset>
+            </form>
+
+            <a href="{{ path('EditAccountData') }}">Modify account</a>
+        </div>
+    {% endif %}
+
+{% endblock %}

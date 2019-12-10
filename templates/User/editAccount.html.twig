@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if form is defined %}
+
+        {{ form_start(form) }}
+
+        <div class="body_form">
+            <form>
+                <fieldset>
+                    <legend>Update your account</legend>
+                    {{ form_row(form.firstname, {
+                        'label': 'First Name '
+                    }) }}
+
+                    {{ form_row(form.lastname, {
+                        'label': 'Last Name '
+                    }) }}
+
+                    {{ form_row(form.information, {
+                        'label': 'About Me'
+                    }) }}
+
+                    {{ form_row(form._token) }}
+                    <br>
+
+                    <button class="btn" type="submit" >Update</button>
+
+                </fieldset>
+
+            </form>
+        </div>
+
+        {{ form_end(form) }}
+    {% endif %}
+
+{% endblock %}
