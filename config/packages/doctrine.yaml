@@ -1,6 +1,5 @@
 parameters:
     # Permet de passer cette url en tant que variable d'environnement
-    env(DATABASE_URL): 'mysql://root:@127.0.0.1:3306/leboncoing_database'
 
 doctrine:
     dbal:
