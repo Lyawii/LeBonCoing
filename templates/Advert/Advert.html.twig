@@ -10,32 +10,31 @@
             <fieldset>
                 <legend>Create Advert</legend>
                     <form>
-                        <label>Name</label>
-                        <p>{{ form_row(form.name) }}</p>
+                            {{ form_row(form.name, {
+                                'label': 'Name: '}) }}
 
-                        <label>Description</label>
-                        <p>{{ form_row(form.description) }}</p>
+                            {{ form_row(form.description, {
+                                'label': 'Descripion: ' }) }}
 
-                        <label>Price</label>
-                        <p>{{ form_row(form.price) }}</p>
+                            {{ form_row(form.price, {
+                                'label': 'Price: '}) }}
 
-                        <label>City</label>
-                        <p>{{ form_row(form.city) }}</p>
+                            {{ form_row(form.city, {
+                                'label': 'City: '}) }}
 
-                        <label>Adress</label>
-                        <p>{{ form_row(form.adress) }}</p>
+                            {{ form_row(form.adress, {
+                                'label': 'Adress: '}) }}
 
-                        <label>Postal Code</label>
-                        <p>{{ form_row(form.postalcode) }}</p>
+                            {{ form_row(form.postalcode, {
+                                'label': 'Postal Code: '}) }}
 
-                        <label>Category</label>
-                        <p>{{ form_row(form.category) }}</p>
+                            {{ form_row(form.category, {
+                                'label': 'Category: ' }) }}
                             <br />
 
-                        <label>Image</label>
-                        <p>{{ form_row(form.images) }}</p>
+                            {{ form_row(form.images, {
+                                'label': 'Images: '}) }}
                             <br />
-
                             {{ form_row(form._token) }}
 
                             <button type="submit">Create</button>
