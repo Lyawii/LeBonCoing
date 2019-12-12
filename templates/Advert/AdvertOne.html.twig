@@ -5,37 +5,29 @@
 
     {% if AllAdvert is defined %}
         {% for it in AllAdvert %}
-            <div class="Advert">
-                <div id="image" class="img">
+            <div class="body_form">
+                    <fieldset>
+                            <legend>{{ it.getName() }}</legend>
+                        <br />
+                            <label>Description</label>
+                            <p>{{ it.getDescription() }}</p>
+                        <br>
+                            <label>Category</label>
+                            <p>{{ it.getCategory().getName() }}</p>
 
-                </div>
-                <br />
-                <div>
-                    <div class="title">
-                        <h1 id="name">{{ it.getName() }}</h1>
-                    </div>
-                    <br />
-                    <div class="description">
-                        <h3>Description</h3>
-                        <p id="description">{{ it.getDescription() }}</p><br>
-                    </div>
-                    <div class="category">
-                        <h3 >Category</h3>
-                        <div id="category">{{ it.getCategory().getName() }}</div>
-                    </div>
-                    <br />
-                    <div class="price">
-                        <h3>Price</h3>
-                        <div id="price"> {{ it.getPrice() }} </div>
-                    </div>
+                        <br />
 
+                            <label>Price</label>
+                            <p> {{ it.getPrice() }} </p>
 
-                    {% if app.user is defined %}
-                        {% if app.user.id == it.user.id %}
-                            <a href="">Modify</a><br>
+                        {% if app.user is defined %}
+                            {% if app.user.id == it.user.id %}
+                                <a href="">Modify</a><br>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
 
+                    </fieldset>
+            </div>
         {% endfor %}
     {% endif %}
 

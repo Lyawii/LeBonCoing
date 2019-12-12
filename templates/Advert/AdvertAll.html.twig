@@ -5,23 +5,38 @@
 
     {% if AllAdvert is defined %}
         {% for it in AllAdvert %}
-            <div>
-                <div>
-                    <a href="{{ path('AdvertByName', {nameUser: it.getUser().getPseudo(), name: it.getName()}) }}">{{ it.getName() }}</a>
-                    <div>
-                        <a href="">By  {{ it.getUser().getPseudo() }}<br></a><br>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div>
-                            Description : {{ it.getDescription() }} <br>
-                            Category : {{ it.getCategory().getName() }} <br>
-                            Price : {{ it.getPrice() }} <br>
-                            City : {{ it.getCity() }} <br>
-                            Adress : {{ it.getAdress() }} <br>
-                            Postal Code : {{ it.getPostalcode() }} <br>
-                            creation date : {{ it.getCreatedAt().format('Y-m-d H:i:s') }} <br>
+            <div class="body_form">
+                    <form>
+                        <fieldset>
+                            <legend>
+                                <a href="{{ path('AdvertByName', {nameUser: it.getUser().getPseudo(), name: it.getName()}) }}">{{ it.getName() }}</a>
+                            </legend>
+
+                        <h1>By  {{ it.getUser().getPseudo() }}</h1>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <label>Description</label>
+                            <p>{{ it.getDescription() }} <br></p>
+
+                            <label>Category</label>
+                            <p>{{ it.getCategory().getName() }} <br></p>
+
+                            <label>Price</label>
+                            <p>{{ it.getPrice() }} <br></p>
+
+                            <label>City</label>
+                            <p>{{ it.getCity() }} <br></p>
+
+                            <label>Adress</label>
+                            <p>{{ it.getAdress() }} <br></p>
+
+                            <label>Postal Code</label>
+                            <p>{{ it.getPostalcode() }} <br></p>
+
+                            <label>Creation date</label>
+                            <p>{{ it.getCreatedAt().format('Y-m-d H:i:s') }} <br></p>
 
                             {% for image in it.getImages() %}
                                 <img height="160px" width="160xp" src="{{ asset(image.getImagePath()) }}" alt="">
@@ -33,10 +48,9 @@
                                 {% endif %}
                             {% endif %}
 
-                        </div>
-                    </div>
+                        </fieldset>
+                    </form>
                 </div>
-            </div>
 
         {% endfor %}
     {% endif %}

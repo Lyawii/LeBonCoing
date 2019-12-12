@@ -1,6 +1,7 @@
 parameters:
     # Permet de passer cette url en tant que variable d'environnement
 
+
 doctrine:
     dbal:
         # configure these for your database server

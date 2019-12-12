@@ -114,13 +114,13 @@ class AdvertController extends AbstractController
 
             $currentDir = getcwd();
             $filesystem = new Filesystem();
-            if (!$filesystem->exists($currentDir . '/Image/Advert/' . 'creator\'s name/' . $advert->getName()))
-                $filesystem->mkdir($currentDir . '/Image/Advert/' . 'creator\'s name/' . $advert->getName(), 0700);
+            if (!$filesystem->exists($currentDir . '/Image/' . 'creator\'s name/' . $advert->getName()))
+                $filesystem->mkdir($currentDir . '/Image/' . 'creator\'s name/' . $advert->getName(), 0700);
             foreach ($request->files->get('advert')['images'] as $image) {
-                $image->move($currentDir . '/Image/Advert/' . 'creator\'s name/' . $advert->getName(), $image->getClientOriginalName());
+                $image->move($currentDir . '/Image/' . 'creator\'s name/' . $advert->getName(), $image->getClientOriginalName());
                 $newImage = new Image();
                 $newImage
-                    ->setImagePath('/Image/Advert/' . 'creator\'s name/' . $advert->getName() . '/' . $image->getClientOriginalName())
+                    ->setImagePath('/Image/' . 'creator\'s name/' . $advert->getName() . '/' . $image->getClientOriginalName())
                     ->setAdvert($advert);
                 $em->persist($newImage);
             }
